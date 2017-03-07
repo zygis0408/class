@@ -28,14 +28,6 @@ public class QuickPollSetup extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String q = request.getParameter("question");
-	    ServletContext c = getServletContext();
-	    c.setAttribute("question", "What sport do you prefer");
-	    if (((Integer)c.getAttribute("yes"))==null)
-	    {
-	    c.setAttribute("yes", new Integer(0));
-	    c.setAttribute("no", new Integer(0));
-	    }
 	    response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();
 	    response.sendRedirect("http://localhost:8080/VoteWA/ask");
