@@ -31,18 +31,14 @@ public class QuickPollSetup extends HttpServlet {
 		String q = request.getParameter("question");
 	    ServletContext c = getServletContext();
 	    c.setAttribute("question", "What sport do you prefer");
+	    if (((Integer)c.getAttribute("yes"))==null)
+	    {
 	    c.setAttribute("yes", new Integer(0));
 	    c.setAttribute("no", new Integer(0));
+	    }
 	    response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();
 	    response.sendRedirect("http://localhost:8080/VoteWA/ask");
-	    /*out.print("<html><head><title>QuickPoll</title></head><body>"+
-	              "<h1>QuickPoll</h1>"+
-	              "Your question has been registered. "+
-	              "Let the vote begin!"+
-	              "</body></html>");
-		*/
-		// TODO Auto-generated method stub
 	}
 
 }

@@ -22,10 +22,6 @@ public class QuickPollVote extends HttpServlet
     }
     PrintWriter out = response.getWriter();
     response.setContentType("text/html");
-    out.print("<html><head><title>QuickPoll</title></head><body>"+
-              "<h1>QuickPoll</h1>"+
-              "Thank you for your vote!"+
-              "</body></html>");
     response.sendRedirect("http://localhost:8080/VoteWA/results");
   }
 }	
